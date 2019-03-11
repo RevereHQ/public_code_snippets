@@ -1,0 +1,30 @@
+{
+  "schemaName":"ecommerce",
+  "tableName":"ecommerce",
+  "selectFields":[
+    {"column":"metro_region","aggregator":null},
+    {"column":"sessions","aggregator":"SUM"},
+    {"column":"transactions","aggregator":"SUM"},
+    {"column":"transaction_revenue","aggregator":"SUM"},
+    {"column":"datehour","aggregator":null}
+  ],
+  "groupBy":["metro_region","datehour"],
+  "orderBy":[
+    {"column":"sessions","order":false},
+    {"column":"metro_region","order":true}
+  ],
+  "filters":[
+    {
+      "column":"sessions",
+      "connect":null,
+      "operator":">=",
+      "value":"10"
+    },
+    {
+      "column":"transactions",
+      "connect":"or",
+      "operator":">=",
+      "value":"5"
+    }
+  ]
+}

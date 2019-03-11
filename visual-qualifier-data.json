@@ -1,0 +1,16 @@
+{
+  "filters":[
+    {
+      "column":"transactions",
+      "connect":null,
+      "operator":"<",
+      "comparisonAggregator":"SUM",
+      "comparisonPeriod":"past 90 days"
+    }
+  ],
+  "period":{
+    "column":"datehour",
+    "operator":"PERIODOP",
+    "value":"past 30 days"
+  }
+}
